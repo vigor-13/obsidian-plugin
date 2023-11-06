@@ -1,0 +1,109 @@
+/*
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+*/
+
+/* H2 타이틀 */
+h2,
+.markdown-rendered h2,
+.HyperMD-header-2,
+.inline-title[data-level='2'],
+.HyperMD-list-line .cm-header-2,
+.markdown-source-view.mod-cm6 .cm-content > .HyperMD-header-2 {
+	border-bottom: 4px solid #dddddd33 !important;
+	padding-bottom: 10px !important;
+	margin-bottom: 10px !important;
+}
+
+/* 이미지 */
+img {
+	border-radius: 10px !important;
+}
+
+/* p태그에 마우스 오버시 왼편에 나타나는 UI 제거 */
+body:not(.line-hover-indicator-disable)
+	.workspace-leaf-content[data-type='markdown']
+	.markdown-source-view
+	.cm-content
+	> div:not(:has(.mk-note-footer)):has(.cm-hmd-list-indent)::after,
+body:not(.line-hover-indicator-disable)
+	.workspace-leaf-content[data-type='markdown']
+	.markdown-source-view
+	.cm-content
+	> div:not(.image-embed, .mk-header, :has(.mk-note-footer, .collapse-indicator))::after,
+body:not(.line-hover-indicator-disable)
+	.workspace-leaf-content[data-type='markdown']:not(:has(.document-search-container))
+	.markdown-preview-sizer
+	> div:is(.el-ul, .el-ol)::after,
+body:not(.line-hover-indicator-disable)
+	.workspace-leaf-content[data-type='markdown']:not(:has(.document-search-container))
+	.markdown-preview-sizer
+	> div:not([class], :has(.collapse-indicator, .mk-header))::after {
+	opacity: 0 !important;
+}
+
+/* 코드 블럭 */
+.theme-light kbd,
+.theme-light
+	.cm-s-obsidian
+	span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+.theme-light .cm-s-obsidian span.cm-inline-code,
+.theme-light :not(pre) > code,
+.theme-light .cm-s-obsidian div.HyperMD-codeblock-begin-bg,
+.theme-light .cm-s-obsidian div.HyperMD-codeblock-end-bg,
+.theme-light .cm-s-obsidian div.HyperMD-codeblock-bg,
+.theme-light .markdown-rendered pre,
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background-color: #f6f7f8;
+}
+
+/*****************
+이미지 캡션 및 중앙 정렬
+******************/
+
+/* reading mode */
+.image-embed[alt]:after {
+	content: attr(alt);
+	display: block;
+	margin: 0.5rem 1rem 1rem 1rem;
+	font-size: 90%;
+	line-height: 1.4;
+	/* color: var(--text-faint); */
+	color: hwb(199 61% 27%) !important;
+	text-align: center;
+	font-style: italic;
+}
+/* source view and live preview */
+.image-embed[alt]:after {
+	content: attr(alt);
+	display: block;
+	margin: 0.5rem 1rem 1rem 1rem;
+	font-size: 90%;
+	line-height: 1.4;
+	/* color: var(--text-faint); */
+	color: hsl(198deg 18.91% 66.63%) !important;
+	text-align: center;
+	font-style: italic;
+}
+
+/* reading mode */
+img {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.markdown-source-view.mod-cm6 .cm-content > * {
+	margin: auto auto !important;
+}
+/* source view and live preview */
+img {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.markdown-source-view.mod-cm6 .cm-content > * {
+	margin: auto auto !important;
+}
